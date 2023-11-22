@@ -18,10 +18,8 @@ class CustomException(Exception):
 
      
     
-
+# Example code 
 # This is how we will do the logging and exception handline throughout projects as it is done below 
-    
-
 if __name__=="__main__":
     logging.info("Logging has started") # this will tell what actually is happening right now in the code , will get saved in the logs folder 
 
