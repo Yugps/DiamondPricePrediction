@@ -1,0 +1,3 @@
+train.csv : artifacts/train.csv
+test.csv : artifacts/test.csv
+raw.csv : artifacts/raw.csv
