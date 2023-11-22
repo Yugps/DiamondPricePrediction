@@ -4,4 +4,5 @@ flask
 numpy 
 matplotlib
 seaborn
--e .
+xgboost
+#-e .
