@@ -6,36 +6,44 @@ import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
 
-try:
-    logging.info('getting the original data file path')
-    class data_path:
-        def __init__(self,csv_filename='gemstones.csv'):
+
+
+class data_path:
+    def __init__(self,csv_filename='gemstones.csv'):
+        logging.info('getting the original data file path')
+        try:
             self.model_data_path=os.path.join('notebooks',csv_filename)
-        def filepath(self):
-            return self.model_data_path
-except Exception as e:
-    logging.info(f'{e}')
-    raise CustomException(e,sys)
+        except Exception as e:
+            logging.info('problem in orignal data path')
+            raise CustomException(e,sys)
+    def filepath(self):
+        return self.model_data_path
 
 
-try:
-    logging.info('reading into the data')
-    class data_ingestion:
-        def __init__(self):
+
+
+
+class data_ingestion:
+    def __init__(self):
+        logging.info('reading into the data')
+        try:
             orignal_data_path=data_path(csv_filename='gemstones.csv')
             data=pd.read_csv(orignal_data_path.filepath())
-            self.data=data 
-        def get_data(self):
-            return self.data
-
-except Exception as e:
-    logging.info(f'{e}')
-    raise CustomException(e,sys)
+            self.data=data
+        except Exception as e:
+            logging.info('problem in reading the data')
+            raise CustomException(e,sys) 
+    def get_data(self):
+        return self.data
         
-try:
-    logging.info('splititng data into train and test and saving them in artifacts folder as well as raw data too')
-    class splitting_saving_data:
-        def __init__(self):
+            
+
+
+        
+class splitting_saving_data:
+    def __init__(self):
+        logging.info('splitting data into train and test and saving them in artifacts folder as well as raw data too , txt file created for paths')
+        try:
             data=data_ingestion()
             df=data.get_data()
             train_data,test_data=train_test_split(df,test_size=0.2,random_state=42)
@@ -49,9 +57,9 @@ try:
             with open('Train and Test Data Path.txt','w') as file:
                 for i in self.paths:
                     file.write(f'{i.split("/")[-1]} : {i}\n')
-except Exception as e:
-    logging.info(f'{e}')
-    raise CustomException(e,sys)
+        except Exception as e:
+            logging.info('problem in splitting and saving the data or creating the txt file with ')
+            raise CustomException(e,sys)
 
 
 splitting_saving_data()
