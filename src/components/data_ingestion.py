@@ -60,9 +60,12 @@ class splitting_saving_data:
         except Exception as e:
             logging.info('problem in splitting and saving the data or creating the txt file with ')
             raise CustomException(e,sys)
+    def return_paths(self):
+        return self.train_csv_path,self.test_csv_path
+    
 
 
-splitting_saving_data()
+
 
 
 
