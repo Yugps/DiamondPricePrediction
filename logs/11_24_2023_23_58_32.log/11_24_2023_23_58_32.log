@@ -1,0 +1,7 @@
+[ 2023-11-24 23:58:36,724 ] 96 werkzeug - WARNING -  * Debugger is active!
+[ 2023-11-24 23:58:36,787 ] 96 werkzeug - INFO -  * Debugger PIN: 439-245-818
+[ 2023-11-24 23:58:51,235 ] 96 werkzeug - INFO - 127.0.0.1 - - [24/Nov/2023 23:58:51] "POST /prediction_making HTTP/1.1" 200 -
+[ 2023-11-24 23:58:55,731 ] 96 werkzeug - INFO - 127.0.0.1 - - [24/Nov/2023 23:58:55] "GET /prediction_making HTTP/1.1" 200 -
+[ 2023-11-24 23:59:00,384 ] 96 werkzeug - INFO - 127.0.0.1 - - [24/Nov/2023 23:59:00] "GET / HTTP/1.1" 200 -
+[ 2023-11-24 23:59:24,182 ] 96 werkzeug - INFO - 127.0.0.1 - - [24/Nov/2023 23:59:24] "GET /prediction_making HTTP/1.1" 200 -
+[ 2023-11-24 23:59:48,723 ] 96 werkzeug - INFO - 127.0.0.1 - - [24/Nov/2023 23:59:48] "POST /prediction_making HTTP/1.1" 200 -

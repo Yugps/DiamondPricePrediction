@@ -2,7 +2,7 @@
 import sys
 from src.exception import CustomException
 from src.logger import logging
-from data_transformation import pipelining_transformation
+from src.components.data_transformation import pipelining_transformation
 import pandas as pd
 import numpy as np
 import pickle
@@ -72,8 +72,7 @@ class model_picker_and_trainer:
              logging.info('problem occured in model training part')
              raise CustomException(e,sys)
 
-mpt=model_picker_and_trainer()
-mpt.model_selector()
+
         
             
         

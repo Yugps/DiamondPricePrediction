@@ -1,5 +1,5 @@
 # In this file all kind of data transformation takes place 
-from data_ingestion import splitting_saving_data
+from src.components.data_ingestion import splitting_saving_data
 from src.logger import logging 
 from src.exception import CustomException
 from sklearn.preprocessing import StandardScaler
@@ -23,6 +23,7 @@ class data_preparation:
             train_df=pd.read_csv(train_path)
             test_df=pd.read_csv(test_path)
             complete_df=pd.concat([train_df,test_df],axis='rows')
+            complete_df.to_csv('artifacts/complete_df.csv')
             complete_df.drop('id',axis='columns',inplace=True)
             obj_columns=[]
             numerical_columns=[]
@@ -35,6 +36,9 @@ class data_preparation:
             self.numerical_columns=numerical_columns
             self.obj_columns=obj_columns
             self.complete_df=complete_df
+            print(self.numerical_columns)
+            print(self.obj_columns)
+            print(complete_df.columns)
         except Exception as e:
             logging.info('exception occured in data preparation under data transformation')
             raise CustomException(e,sys)
@@ -74,9 +78,13 @@ class pipelining_transformation:
             # train and test slitting the data 
             x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.2,random_state=42)
             self.x_train=x_train
+            self.x_train.to_csv('artifacts/x_train.csv')
             self.x_test=x_test
+            self.x_test.to_csv('artifacts/x_test.csv')
             self.y_train=y_train
+            self.y_train.to_csv('artifacts/y_train.csv')
             self.y_test=y_test
+            self.y_test.to_csv('artifacts/y_test.csv')
         except Exception as e:
             logging.info('problem occured in pipelining transformation under data transformation')
             raise CustomException(e,sys)    
@@ -89,6 +97,9 @@ class pipelining_transformation:
         except Exception as e:
             logging.info('problem has occured in saving the preprocessor.pkl file')
             raise CustomException(e,sys)
+        
+
+
     
 
 

@@ -51,8 +51,8 @@ class splitting_saving_data:
             self.test_csv_path='artifacts/test.csv'
             self.raw_csv_path='artifacts/raw.csv'
             self.paths=[self.train_csv_path,self.test_csv_path,self.raw_csv_path]
-            train_data.to_csv(self.train_csv_path)
-            test_data.to_csv(self.test_csv_path)
+            train_data.to_csv(self.train_csv_path,index=False)
+            test_data.to_csv(self.test_csv_path,index=False)
             df.to_csv(self.raw_csv_path)
             with open('Train and Test Data Path.txt','w') as file:
                 for i in self.paths:

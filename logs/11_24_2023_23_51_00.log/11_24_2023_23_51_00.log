@@ -1,0 +1,8 @@
+[ 2023-11-24 23:51:17,481 ] 13 root - INFO - model data is getting picked
+[ 2023-11-24 23:51:17,481 ] 52 root - INFO - pipelining the transformation has initiated
+[ 2023-11-24 23:51:17,481 ] 19 root - INFO - data_preparation has started
+[ 2023-11-24 23:51:17,481 ] 45 root - INFO - splitting data into train and test and saving them in artifacts folder as well as raw data too , txt file created for paths
+[ 2023-11-24 23:51:17,481 ] 28 root - INFO - reading into the data
+[ 2023-11-24 23:51:17,481 ] 13 root - INFO - getting the original data file path
+[ 2023-11-24 23:51:30,033 ] 93 root - INFO - saving preprocessor.pkl file in artifacts folder
+[ 2023-11-24 23:51:30,073 ] 27 root - INFO - model training has started
